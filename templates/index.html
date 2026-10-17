@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+</head>
+<body>
+    <header>w
+        <nav>
+            <a href="/index"> Главная </a>
+            <a href="/about"> Об авторе </a>
+            <a href="/mem"> Генератор чего-то </a>
+        </nav>
+    </header>
+    <main>
+     <h1>Калькулятор опыта муникрафт</h1>
+    <form method="POST">
+    <table border="1">
+        <tr>
+            <td>
+                <input name="num" type="number"/>
+                <input name="num1" type="number"/>
+                <button class = "btn">send</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<h2>Результат</h2>
+<p>{{num}}</p>
+
+
+
+
+
+<span class="loader"></span>
+
+<h1>Рейтинг мобов для повышения уровня опыта</h1>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Дракон Края: 12 000 000 XP</td><td>Иссушитель: 60 XP</td></tr>
+            <tr><td>2</td><td>Брутальный пилин: 32 XP</td><td>Детеныш зомби: 22 XP</td></tr>
+            <tr><td>3</td><td>Ифрит: 15 XP</td><td>Страж: 9 XP</td></tr>
+            <tr><td>4</td><td>Вызыватель: 14 XP</td><td>Большой слизень: 3 XP</td></tr>
+            <tr><td>5</td><td>Разоритель: 10 XP</td><td>Кадавр: 2 XP</td></tr>
+            <tr><td>6</td><td>Древний страж: 8 XP</td><td>Древний страж: мало XP</td></tr>
+            <tr><td>7</td><td>Эндермит: 3 XP</td><td>Эндермит: -0 XP</td></tr>
+        </tbody>
+    </table>
+
+<div class="ball"></div>
+
+</main>
+</body>
+</html>

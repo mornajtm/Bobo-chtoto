@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Генерация мемов</h1>
+    <form method="POST">
+        <input name="top_text" placeholder="Напиши текст своей картинки" value="{{ top_text }}">
+        <select name="image_name">
+            {% for file in image_list %}
+                <option value="{{ file }}" {% if file == image_name %}selected{% endif %}>{{ file }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Отправить"/>
+    </form>
+    {% if image_name %}
+    <div class="meme-container">
+        <img src="{{ url_for('serve_image', filename=image_name) }}" alt="{{ image_name }}">
+        {% if top_text %}
+        <span class="meme-text">{{ top_text }}</span>
+        {% endif %}
+    </div>
+    {% endif %}
+</body>
+</html>

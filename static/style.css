@@ -1,0 +1,315 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+      background-image: url(images/Паук\ велик.jpg);
+      background-size: cover;
+      font-family: Arial, sans-serif;
+}
+
+header{
+    background-color: #cc0000;
+    border-bottom: 2px solid #990000;
+    padding: 15px 0;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #ffcccc;
+}
+
+main{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1{
+    font-size: 28px;
+    color: #cc0000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2{
+    font-size: 22px;
+    color: #990000;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+p{
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th, td{
+    border: 1px solid #cc0000;
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #ffe6e6;
+    color: #990000;
+}
+
+form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff5f5;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ffcccc;
+}
+
+input{
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #cc0000;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+input:focus{
+    outline: none;
+    border-color: #990000;
+    background-color: #fff5f5;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+.btn:hover{
+    background-color: firebrick;
+}
+
+.btn:active{
+    background-color: rgb(14, 39, 39);
+}
+
+.btn {
+    color: white;
+    background-color: darkblue;
+    transition: background-color 0.5s; 
+}
+
+a:hover {
+    color: bisque;
+}
+
+a:active {
+    color: rgb(171, 230, 169);
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);     
+  }
+  18% {
+    transform: scale(1.2) rotate(180deg);    
+  }
+  50%{
+    transform: translate(150px) rotate(-180deg)
+  }
+
+  100% {
+    transform: scale(1);      
+  }
+}
+
+button {
+    animation: pulse 5s infinite; 
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    border-radius: 50%; 
+    animation: bounce 1s ease-in-out infinite;
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px); 
+        
+    }
+}
+
+
+.ball {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.loader {
+  --color-1: #a6a828;
+  --color-2: rgba(128, 104, 104, 0.5);
+  --size: 1px;
+
+  width: 0;
+  height: calc(4.8 * var(--size));
+  display: inline-block;
+  position: relative;
+  background: var(--color-1);
+  box-shadow: 0 0 calc(10 * var(--size)) var(--color-2);
+  box-sizing: border-box;
+  animation: animFw 8s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  width: calc(10 * var(--size));
+  height: calc(1 * var(--size));
+  background: var(--color-1);
+  position: absolute;
+  top: calc(9 * var(--size));
+  right: calc(-2 * var(--size));
+  opacity: 0;
+  transform: rotate(-45deg) translateX(0);
+  box-sizing: border-box;
+  animation: coli1 0.3s linear infinite;
+}
+.loader::before {
+  top: calc(-4 * var(--size));
+  transform: rotate(45deg);
+  animation: coli2 0.3s linear infinite;
+}
+
+.meme-container {
+    position: relative;
+    display: inline-block;
+}
+
+.meme-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+    text-align: center;
+    width: 100%;
+}
+
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes coli1 {
+  0% {
+    transform: rotate(-45deg) translateX(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(-45deg) translateX(calc(-45 * var(--size)));
+    opacity: 0;
+  }
+}
+
+@keyframes coli2 {
+  0% {
+    transform: rotate(45deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translateX(calc(-45 * var(--size)));
+    opacity: 0.7;
+  }
+}
+
+
+[data-ref]:has(span.loader) {
+  justify-content: normal;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+    }
+    
+    header{
+        background-color: #990000;
+        border-bottom-color: #660000;
+    }
+    
+    h1{
+        color: #302d2d;
+    }
+    
+    h2{
+        color: #302d2d;
+    }
+    
+    table{
+        border-color: #660000;
+    }
+    
+    th, td{
+        border-color: #660000;
+    }
+    
+    th{
+        background-color: #2a2a2a;
+        color: #ffcccc;
+    }
+    
+    form{
+        background-color: #2a2a2a;
+        border-color: #660000;
+    }
+    
+    input{
+        border-color: #660000;
+        background-color: #1a1a1a;
+        color: #fff;
+    }
+    
+    a{
+        color: #ffcccc;
+    }
+}
