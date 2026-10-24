@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Убедитесь, что путь к css правильный -->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <title>Портфолио</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">HOME</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">ABOUT</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">MY SKILLS</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="main__home home" id="home">
+        <h1 class="home__title">BOBO</h1>
+        <p class="home__subtitle">WEB-DEVELOPER, PYTHON PROGRAMMER</p>
+        
+        <div class="home__logo-container">
+          <img class="home__logo" src="static/img/logo.jpg" alt="BOBO Logo" />
+        </div>
+      </section>
+      
+            <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">MY SKILLS</h2>
+        
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="static/img/python.png" alt="python" width="150" height="150" />
+              <span class="skill__info">Python</span>
+              <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
+            </li>
+            
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="static/img/discord.png" alt="discord" width="150" height="150" />
+              <span class="skill__info">Discord Bot</span>
+              <input class="skill__button" type="submit" name="button_discord" value="SHOW PROJECT">
+            </li>
+            
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="static/img/html.png" alt="html" width="150" height="150" />
+              <span class="skill__info">HTML/CSS</span>
+              <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
+            </li>
+          
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="static/img/db.webp" alt="SQL" width="150" height="150" />
+              <span class="skill__info">SQL</span>
+              <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
+            </li>
+          </ul>
+          
+          
+          <div class="skills__nav">
+              <a href="/index" class="skills__link">Перейти на главную проекта →</a>
+          </div>
+        </form>
+
+        {% if button_python %}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="static/img/python-project.png" alt="project" width="500">
+              <a class="project__link" href="#" target="_blank">Открыть на GitHub</a>
+          </div>
+        {% endif %}
+      </section>
+
+   
+    <footer style="text-align: center; padding: 20px 0 40px 0;">
+        <a href="/index" style="font-size: 18px; font-weight: bold; color: #a178b9; text-decoration: underline;">← Вернуться на главную проекта</a>
+    </footer>
+  </body>
+</html>
